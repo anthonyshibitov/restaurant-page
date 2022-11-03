@@ -1,3 +1,4 @@
-import pageload from './pageload.js';
+import pageHandler from './pageHandler.js';
 
-pageload();
+let page = pageHandler();
+page.evokeListeners();

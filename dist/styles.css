@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'GB';
+    src: url("Gaussian\ Blur.ttf");
+}
+
+* {
+    font-family: 'GB';
+}
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+/* ----- header container ----- */
+
+.header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header > img {
+    max-width: 200px;
+    height: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.nav-item {
+    
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}

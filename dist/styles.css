@@ -1,22 +1,70 @@
 @font-face {
     font-family: 'GB';
-    src: url("Gaussian\ Blur.ttf");
+    src: url("Blur\ Regular.ttf");
+}
+
+@font-face {
+    font-family: 'akira';
+    src: url("akira.otf") format("opentype");
 }
 
 * {
     font-family: 'GB';
 }
 
+body {
+    margin: 0px;
+}
+
+.center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
 .body-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 16px;
 }
+
+/* ----- ticker container ----- */
+
+.ticker-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+}
+
+.ticker {
+    width: 100vw;
+    padding: 8px 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    text-align: center;
+    transform: translateX(100%);
+    animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* ---------------------------- */
 
 /* ----- header container ----- */
 
 .header-container {
+    margin-top: 32px;
     display: flex;
     justify-content: center;
 }
@@ -33,17 +81,70 @@
     flex-direction: column;
 }
 
+/* ---------------------------- */
+
+/* ----- nav container ----- */
+
 .nav-container {
     display: flex;
     justify-content: center;
     gap: 32px;
+    border-radius: 6px;
+    border: 3px solid black;
+    padding: 8px 8px;
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); */
 }
 
 .nav-item {
-    
+    text-align: center;
+    width: 3rem;
+    flex-grow: 1;
+    padding: 8px;
+    transition: background-color 0.3s ease;
+    transition: color 0.5s ease;
+    border-radius: 6px;
+    cursor: pointer;
 }
+
+.nav-item:hover {
+    background-color: black;
+    color: white;
+    /* box-shadow: inset 0px 0px 5px 5px rgba(255, 255, 255, 1); */
+}
+
+/* ------------------------- */
 
 .content {
     display: flex;
     justify-content: center;
+    border-radius: 6px;
+    border: 3px solid black;
+    width: 80vw;
+    padding: 32px;
+    margin-bottom: 32px;
+}
+
+.info-test > * {
+    font-family: 'akira';
+}
+
+.mock1 {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* .mock1 * {
+    font-family: 'akira';
+} */
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.mock1 img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 4px;
 }

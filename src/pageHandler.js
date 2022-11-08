@@ -1,3 +1,8 @@
+//import { container } from "webpack";
+import homeHandler from './homeHandler.js';
+import infoHandler from './infoHandler.js';
+import credzHandler from './credzHandler.js';
+
 export default function pageHandler() {
     // Page to eventually be drawn
     let pageDrawResult = undefined;
@@ -9,14 +14,11 @@ export default function pageHandler() {
         });
         const navTwo = document.querySelector('#nav-two');
         navTwo.addEventListener('click', () => {
-            // Code
-            console.log('2');
             infoEvent();
         });
         const NavThree = document.querySelector('#nav-three');
         NavThree.addEventListener('click', () => {
-            // Code
-            console.log('3');
+            credzEvent();
         });
     }
 
@@ -26,28 +28,17 @@ export default function pageHandler() {
 
     const homeEvent = () => {
         clearContent();
-
-        pageDrawResult = document.createElement('div');
-        pageDrawResult.classList.add('home-img');
-
-        const egoImg = document.createElement('img');
-        egoImg.src = './ego_heart.jpg';
-        
-        pageDrawResult.appendChild(egoImg);
-        document.querySelector('.content').appendChild(pageDrawResult);
+        homeHandler();
     }
 
     const infoEvent = () => {
         clearContent();
+        infoHandler();
+    }
 
-        pageDrawResult = document.createElement('div');
-        pageDrawResult.classList.add('info-test');
-
-        const infoMsg = document.createElement('div');
-        infoMsg.innerText = 'page two :o';
-
-        pageDrawResult.appendChild(infoMsg);
-        document.querySelector('.content').appendChild(pageDrawResult);
+    const credzEvent = () => {
+        clearContent();
+        credzHandler();
     }
 
     return {

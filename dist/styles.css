@@ -42,7 +42,7 @@ body {
 .ticker {
     width: 100vw;
     padding: 8px 0px;
-    overflow: hidden;
+    /* overflow: hidden; */
     white-space: nowrap;
     font-size: 0.8rem;
     text-align: center;
@@ -55,7 +55,7 @@ body {
         transform: translateX(100%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-150%);
     }
 }
 
